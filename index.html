@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Law ERP by AXION TECH</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><div class="brand-mark">⚖</div><div><span>Law ERP</span><small>ERP JURÍDICO</small></div></div>
+  <nav class="nav">
+    <button class="active" data-screen="dashboard"><span class="icon">▦</span><span>Dashboard</span></button>
+    <button data-screen="clientes"><span class="icon">♙</span><span>Clientes</span></button>
+    <button data-screen="processos"><span class="icon">§</span><span>Processos</span></button>
+    <button data-screen="agenda"><span class="icon">◷</span><span>Agenda & Prazos</span></button>
+    <button data-screen="financeiro"><span class="icon">R$</span><span>Financeiro</span></button>
+  </nav>
+  <div class="sidebar-footer">Escritório Silva & Associados<br>Demo MVP • 2026</div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <div class="crumb">Escritório / <strong id="pageTitle">Dashboard</strong></div>
+  <div class="top-actions"><input class="search" placeholder="Pesquisar no ERP..." id="globalSearch"><div class="avatar">AS</div></div>
+</header>
+
+<section id="dashboard" class="screen active content">
+  <div class="page-head"><div><h1>Bom dia, Yasmin 👋</h1><p>Visão geral do escritório em 18 de agosto de 2026.</p></div><div class="actions"><button class="btn primary" data-toast="Novo processo iniciado">+ Novo processo</button></div></div>
+  <div class="grid kpis">
+    <div class="card kpi"><div class="kpi-top">Processos ativos <span class="dot"></span></div><div class="value">128</div><div class="sub">+6 neste mês</div></div>
+    <div class="card kpi"><div class="kpi-top">Prazos esta semana <span class="dot"></span></div><div class="value">14</div><div class="sub">3 vencem em 48h</div></div>
+    <div class="card kpi"><div class="kpi-top">Audiências hoje <span class="dot"></span></div><div class="value">6</div><div class="sub">2 ainda pela manhã</div></div>
+    <div class="card kpi"><div class="kpi-top">A receber <span class="dot"></span></div><div class="value money">R$ 42.500</div><div class="sub">R$ 8.200 em atraso</div></div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="grid two">
+    <div class="card"><div class="card-head"><h3>Agenda de hoje</h3><button class="btn" data-screen-go="agenda">Ver agenda</button></div><div class="card-body"><div class="list">
+      <div class="list-item"><div style="display:flex;gap:12px"><div class="time">09:00</div><div><div class="item-title">Audiência — Processo 12345</div><div class="item-sub">2ª Vara Cível • Fórum Central</div></div></div><span class="pill red">Hoje</span></div>
+      <div class="list-item"><div style="display:flex;gap:12px"><div class="time">11:30</div><div><div class="item-title">Reunião — João Silva</div><div class="item-sub">Videoconferência • Comercial</div></div></div><span class="pill blue">Reunião</span></div>
+      <div class="list-item"><div style="display:flex;gap:12px"><div class="time">15:00</div><div><div class="item-title">Prazo — Contestação</div><div class="item-sub">Processo 98765 • Dra. Yasmin</div></div></div><span class="pill orange">Prazo</span></div>
+      <div class="list-item"><div style="display:flex;gap:12px"><div class="time">17:30</div><div><div class="item-title">Tarefa interna — Revisar contrato</div><div class="item-sub">Cliente: Empresa ABC</div></div></div><span class="pill green">Normal</span></div>
+    </div></div></div>
+    <div class="card"><div class="card-head"><h3>Alertas importantes</h3><span class="pill red">5</span></div><div class="card-body">
+      <div class="alert red"><strong>3 prazos vencendo em 48h</strong><br><span class="muted">Requerem revisão do responsável.</span></div>
+      <div class="alert"><strong>2 parcelas em atraso</strong><br><span class="muted">Total pendente: R$ 8.200.</span></div>
+      <div class="alert"><strong>1 documento aguardando assinatura</strong><br><span class="muted">Contrato de prestação — Empresa ABC.</span></div>
+    </div></div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="card"><div class="card-head"><h3>Atalhos</h3></div><div class="card-body"><div class="quick">
+    <button data-toast="Formulário de novo cliente aberto">+ Novo cliente</button><button data-toast="Formulário de novo processo aberto">+ Novo processo</button><button data-toast="Formulário de nova tarefa aberto">+ Nova tarefa</button><button data-toast="Formulário de novo compromisso aberto">+ Novo compromisso</button>
+  </div></div></div>
+</section>
+
+<section id="clientes" class="screen content">
+  <div class="page-head"><div><h1>Clientes</h1><p>Cadastro, relacionamento e situação financeira dos clientes.</p></div><div class="actions"><button class="btn" data-toast="Exportação preparada">Exportar</button><button class="btn primary" data-toast="Novo cliente iniciado">+ Novo cliente</button></div></div>
+  <div class="toolbar"><input id="clientSearch" placeholder="Buscar por nome, CPF/CNPJ..."><select><option>Todos os status</option><option>Ativo</option><option>Inativo</option></select><select><option>Todos os advogados</option><option>Dra. Yasmin Santos</option><option>Dr. Carlos Lima</option></select></div>
+  <div class="card table-wrap"><table class="table"><thead><tr><th>Cliente</th><th>Tipo</th><th>Contato</th><th>Responsável</th><th>Processos</th><th>Financeiro</th><th>Status</th></tr></thead><tbody id="clientRows">
+    <tr><td><div class="name">João Silva</div><div class="muted">CPF 123.456.789-00</div></td><td>Pessoa física</td><td>(11) 99999-1020<br><span class="muted">joao@email.com</span></td><td>Dra. Yasmin Santos</td><td>4</td><td class="positive">Em dia</td><td><span class="pill green">Ativo</span></td></tr>
+    <tr><td><div class="name">Empresa ABC Ltda.</div><div class="muted">CNPJ 12.345.678/0001-90</div></td><td>Pessoa jurídica</td><td>(11) 3111-2080<br><span class="muted">juridico@abc.com</span></td><td>Dr. Carlos Lima</td><td>12</td><td class="negative">R$ 8.200 atraso</td><td><span class="pill green">Ativo</span></td></tr>
+    <tr><td><div class="name">Mariana Costa</div><div class="muted">CPF 987.654.321-00</div></td><td>Pessoa física</td><td>(11) 98877-4412<br><span class="muted">mariana@email.com</span></td><td>Dra. Yasmin Santos</td><td>2</td><td class="positive">Em dia</td><td><span class="pill green">Ativo</span></td></tr>
+    <tr><td><div class="name">Construtora Horizonte</div><div class="muted">CNPJ 45.678.901/0001-22</div></td><td>Pessoa jurídica</td><td>(11) 4002-8922<br><span class="muted">contato@horizonte.com</span></td><td>Dr. Carlos Lima</td><td>7</td><td class="positive">Em dia</td><td><span class="pill green">Ativo</span></td></tr>
+    <tr><td><div class="name">Pedro Almeida</div><div class="muted">CPF 321.654.987-11</div></td><td>Pessoa física</td><td>(11) 97771-1200<br><span class="muted">pedro@email.com</span></td><td>Dra. Yasmin Santos</td><td>1</td><td class="muted">Sem lançamentos</td><td><span class="pill orange">Inativo</span></td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="processos" class="screen content">
+  <div class="page-head"><div><h1>Processos</h1><p>Gestão completa dos processos e seus principais eventos.</p></div><button class="btn primary" data-toast="Novo processo iniciado">+ Novo processo</button></div>
+  <div class="process-grid">
+    <div class="card profile"><div class="pill blue">Em andamento</div><h2>12345-67.2026.8.26.0100</h2><p class="muted small">Ação de cobrança • Cível</p>
+      <div class="field"><label>Cliente</label><strong>João Silva</strong></div><div class="field"><label>Parte contrária</label><strong>Comercial Beta Ltda.</strong></div><div class="field"><label>Tribunal / Vara</label><strong>TJSP • 2ª Vara Cível</strong></div><div class="field"><label>Advogado responsável</label><strong>Dra. Yasmin Santos</strong></div><div class="field"><label>Valor da causa</label><strong>R$ 75.000,00</strong></div><div class="field"><label>Próximo prazo</label><span class="pill red">20/08/2026</span></div>
+    </div>
+    <div class="card">
+      <div class="tabs"><button class="active" data-tab="resumo">Resumo</button><button data-tab="andamentos">Andamentos</button><button data-tab="prazos">Prazos</button><button data-tab="audiencias">Audiências</button><button data-tab="documentos">Documentos</button><button data-tab="tarefas">Tarefas</button><button data-tab="financeiro">Financeiro</button></div>
+      <div class="card-body" id="processTab">
+        <div class="grid three"><div class="card kpi"><div class="kpi-top">Fase processual</div><div class="value" style="font-size:18px">Contestação</div><div class="sub">Em análise</div></div><div class="card kpi"><div class="kpi-top">Próxima audiência</div><div class="value" style="font-size:18px">28/08</div><div class="sub">14:00 • Sala 4</div></div><div class="card kpi"><div class="kpi-top">Documentos</div><div class="value" style="font-size:18px">23</div><div class="sub">2 pendentes</div></div></div>
+        <div style="height:20px"></div><div class="timeline"><div class="event"><div class="event-date">18 AGO 2026</div><div class="event-body"><strong>Prazo cadastrado</strong><p>Apresentar manifestação sobre documentos da parte contrária.</p></div></div><div class="event"><div class="event-date">14 AGO 2026</div><div class="event-body"><strong>Documento protocolado</strong><p>Petição intermediária enviada ao tribunal.</p></div></div><div class="event"><div class="event-date">05 AGO 2026</div><div class="event-body"><strong>Distribuição</strong><p>Processo distribuído para a 2ª Vara Cível.</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="agenda" class="screen content">
+  <div class="page-head"><div><h1>Agenda & Prazos</h1><p>Calendário operacional para compromissos, audiências e prazos.</p></div><div class="actions"><button class="btn">Semana</button><button class="btn">Dia</button><button class="btn primary" data-toast="Novo evento iniciado">+ Novo evento</button></div></div>
+  <div class="toolbar"><select><option>Todos os advogados</option><option>Dra. Yasmin Santos</option><option>Dr. Carlos Lima</option></select><select><option>Todos os tipos</option><option>Prazo</option><option>Audiência</option><option>Reunião</option><option>Tarefa</option></select><select><option>Todas as prioridades</option><option>Urgente</option><option>Atenção</option><option>Normal</option></select></div>
+  <div class="calendar"><div class="card" style="padding:16px"><div class="cal-head"><button class="btn">‹</button><div class="cal-title">Agosto 2026</div><button class="btn">›</button></div><div class="cal-grid" id="calendarGrid"></div></div>
+    <div class="card"><div class="card-head"><h3>Próximos eventos</h3></div><div class="card-body"><div class="list">
+      <div class="list-item"><div><div class="item-title">🔴 Prazo — Contestação</div><div class="item-sub">20/08 • Processo 12345 • Ana</div></div><span class="pill red">Urgente</span></div>
+      <div class="list-item"><div><div class="item-title">🟠 Audiência — Processo 67890</div><div class="item-sub">21/08 • 10:00 • Carlos</div></div><span class="pill orange">Atenção</span></div>
+      <div class="list-item"><div><div class="item-title">🟢 Reunião — Mariana Costa</div><div class="item-sub">24/08 • 15:30 • Ana</div></div><span class="pill green">Normal</span></div>
+      <div class="list-item"><div><div class="item-title">🟠 Prazo — Réplica</div><div class="item-sub">26/08 • Processo 55443</div></div><span class="pill orange">Atenção</span></div>
+    </div></div></div>
+  </div>
+</section>
+
+<section id="financeiro" class="screen content">
+  <div class="page-head"><div><h1>Financeiro</h1><p>Contas a receber, despesas e visão do fluxo de caixa.</p></div><div class="actions"><button class="btn" data-toast="Nova despesa iniciada">+ Despesa</button><button class="btn primary" data-toast="Nova cobrança iniciada">+ Cobrança</button></div></div>
+  <div class="grid finance-kpis">
+    <div class="card kpi"><div class="kpi-top">Receita do mês</div><div class="value money">R$ 86.400</div><div class="sub positive">+12,4%</div></div>
+    <div class="card kpi"><div class="kpi-top">Despesas</div><div class="value money">R$ 31.200</div><div class="sub">36% da receita</div></div>
+    <div class="card kpi"><div class="kpi-top">A receber</div><div class="value money">R$ 42.500</div><div class="sub">18 títulos</div></div>
+    <div class="card kpi"><div class="kpi-top">Em atraso</div><div class="value money negative">R$ 8.200</div><div class="sub">2 clientes</div></div>
+    <div class="card kpi"><div class="kpi-top">Lucro estimado</div><div class="value money positive">R$ 55.200</div><div class="sub">64% margem</div></div>
+  </div>
+  <div style="height:16px"></div>
+  <div class="grid two">
+    <div class="card"><div class="card-head"><h3>Contas a receber</h3><button class="btn">Ver tudo</button></div><div class="table-wrap"><table class="table"><thead><tr><th>Cliente</th><th>Processo</th><th>Descrição</th><th>Vencimento</th><th>Valor</th><th>Status</th></tr></thead><tbody>
+      <tr><td class="name">João Silva</td><td class="link">12345</td><td>Honorários</td><td>20/08</td><td class="money">R$ 2.500</td><td><span class="pill orange">Pendente</span></td></tr>
+      <tr><td class="name">Empresa ABC</td><td class="link">98765</td><td>Parcela 3/6</td><td>25/08</td><td class="money">R$ 4.000</td><td><span class="pill green">Pago</span></td></tr>
+      <tr><td class="name">Mariana Costa</td><td class="link">55443</td><td>Honorários</td><td>28/08</td><td class="money">R$ 3.200</td><td><span class="pill orange">Pendente</span></td></tr>
+      <tr><td class="name">Construtora Horizonte</td><td class="link">77112</td><td>Parcela 2/4</td><td>15/08</td><td class="money">R$ 6.500</td><td><span class="pill red">Atrasado</span></td></tr>
+    </tbody></table></div></div>
+    <div class="card"><div class="card-head"><h3>Fluxo de caixa</h3><span class="muted small">Agosto 2026</span></div><div class="card-body">
+      <div class="small muted">Receitas realizadas</div><div style="display:flex;justify-content:space-between;margin:6px 0 15px"><strong>R$ 86.400</strong><strong class="positive">64%</strong></div><div class="progress"><span style="width:64%"></span></div>
+      <div style="height:20px"></div><div class="small muted">Despesas</div><div style="display:flex;justify-content:space-between;margin:6px 0 15px"><strong>R$ 31.200</strong><strong>36%</strong></div><div class="progress"><span style="width:36%"></span></div>
+      <div style="height:20px"></div><div class="alert"><strong>Projeção positiva</strong><br><span class="muted">Saldo projetado de R$ 55.200 até o fim do mês.</span></div>
+    </div></div>
+  </div>
+</section>
+</main>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
